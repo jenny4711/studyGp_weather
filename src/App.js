@@ -4,6 +4,7 @@ import WeatherBtn from './components/WeatherBtn';
 import WeatherBox from './components/WeatherBox'
 import ClipLoader from "react-spinners/ClipLoader";
 import './App.css';
+
 import { useWeatherQuery ,useWatherByLocationQuery} from './hooks/useWeatherQuery';
 function App() {
  
