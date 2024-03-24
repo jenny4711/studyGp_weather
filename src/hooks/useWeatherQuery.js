@@ -5,7 +5,7 @@ import axios from 'axios';
 let apiKey=process.env.REACT_APP_WEATHER_apiKey
 
 const getWeatherByName=async(city)=>{
-  console.log(process.env)
+ 
   return await axios.get(`http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&aqi=yes`)
 }
 
