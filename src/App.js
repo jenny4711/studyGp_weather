@@ -60,7 +60,9 @@ function App() {
 //   const 
 //   return<div className='loading'><ClipLoader color='#f88c6b' loading={true} size={150} /></div> ;
 // }
-  
+  if(isError){
+    console.log(error,'error')
+  }
   return (
     <div className="App">
       <div className='board'>

@@ -2,6 +2,7 @@ import React from 'react'
 
  const WeatherBox = ({weather}) => {
 let F = weather?.main.temp * 1.8 +32
+console.log(weather,'wheather')
   return (
     <div className='weather_box'>
       <h1>{weather?.name === "Null"?"Loading...":weather?.name}</h1>
