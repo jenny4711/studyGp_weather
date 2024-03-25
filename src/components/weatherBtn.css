@@ -17,3 +17,9 @@ input{
   border-radius: 30px;
   border-color:lightgrey;
 }
+
+.cityBtn:active{
+  background-color: white;
+  color:black;
+
+}

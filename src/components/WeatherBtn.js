@@ -4,6 +4,7 @@ import './weatherBtn.css'
 const WeatherBtn = ({setCities,cities,setCity,reset,addCity}) => {
 const [area,setArea]=useState("")
 const [open,setOpen]=useState(false)
+const [press,setPress]=useState(false)
 const showInput=()=>{
   setOpen(!open)
 }
@@ -17,6 +18,8 @@ const handleSubmit = () => {
   setArea(""); 
   setOpen(false); 
 };
+
+
 
   return (
     <div className='WeatherBtn'>
