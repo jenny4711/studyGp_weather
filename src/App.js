@@ -12,7 +12,7 @@ function App() {
   const [city,setCity]=useState("")
   const [lon,setLon]=useState(null)
   const [lat,setLat]=useState(null)
-
+ const [press,setPress]=useState(false)
   const [weather,setWeather]=useState(null)
 
   const [cities,setCities]=useState(['Seoul','Paris','New Port'])
@@ -25,12 +25,14 @@ function App() {
     }
   };
   const reset=(city)=>{
+    setPress(true)
     if(!city){
      setCity('')
-     
+   
      
     }else{
      setCity(city)
+    
     }
    }
    useEffect(() => {
@@ -68,7 +70,7 @@ function App() {
       <div className='board'>
         {isLoading || isLoadingByLocation || weather ===null?<div className='loading'><ClipLoader color='#f88c6b' loading={true} size={50} /></div> :<div></div>}
      <WeatherBox weather={weather}/>
-      <WeatherBtn setCities={setCities} cities={cities} setCity={setCity} reset={reset} addCity={addCity}/>
+      <WeatherBtn press={press} setPress={()=>setPress()} setCities={setCities} cities={cities} setCity={setCity} reset={reset} addCity={addCity}/>
       </div>
     </div>
   );

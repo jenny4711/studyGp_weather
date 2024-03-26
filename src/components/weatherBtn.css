@@ -18,8 +18,12 @@ input{
   border-color:lightgrey;
 }
 
-.cityBtn:active{
+.cityBtn.active{
   background-color: white;
   color:black;
 
+}
+.btn.active{
+  background-color: white;
+  color:black;
 }

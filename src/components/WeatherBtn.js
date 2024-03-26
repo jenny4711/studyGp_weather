@@ -1,10 +1,10 @@
 import React ,{useState}from 'react';
 import { Button } from 'react-bootstrap';
 import './weatherBtn.css'
-const WeatherBtn = ({setCities,cities,setCity,reset,addCity}) => {
+const WeatherBtn = ({press,setPress,setCities,cities,setCity,reset,addCity}) => {
 const [area,setArea]=useState("")
 const [open,setOpen]=useState(false)
-const [press,setPress]=useState(false)
+const [pressedCity,setPressedCity]=useState("")
 const showInput=()=>{
   setOpen(!open)
 }
@@ -19,14 +19,19 @@ const handleSubmit = () => {
   setOpen(false); 
 };
 
+const handleCityBtn=(city)=>{
+  setPress(false)
+setCity(city)
+setPressedCity(city)
 
+}
 
   return (
     <div className='WeatherBtn'>
       <div className='btns'>
-    <Button className='btn' variant="warning" onClick={()=>reset()} >Current Location</Button>
+    <Button className={`btn ${press?'active':''}`} variant="warning" onClick={()=>reset()} >Current Location</Button>
    {cities && cities?.map((city)=>(
-     <Button className='cityBtn' variant="warning" onClick={()=>setCity(city)}>{city}</Button>
+     <Button className={`cityBtn ${pressedCity === city?'active':""}`} variant="warning" onClick={()=>handleCityBtn(city)}>{city}</Button>
      
    ))}
    
